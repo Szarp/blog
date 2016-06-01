@@ -1,0 +1,18 @@
+echo -n "Enter your file name: "
+read filename
+
+echo -n "Enter your post name : "
+read postname
+DATE=`date +%Y-%m-%d`
+simpleblog[0]="---"
+simpleblog[1]="title: $postname"
+simpleblog[2]="tags:"
+simpleblog[3]="Categories:"
+simpleblog[4]="comments: true"
+simpleblog[5]="date: $DATE"
+simpleblog[6]="---"
+
+for j in "${simpleblog[@]}"
+do
+      echo $j 
+done >"$filename.md"
